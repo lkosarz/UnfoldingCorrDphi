@@ -45,14 +45,14 @@ void CreateHistogams()
 
 
 	h_eta = new TH1D("h_eta", "#eta; #eta; counts", 200, -2.0, 2.0);
-	h_phi = new TH1D("h_phi", "#phi; #phi; counts", 314, -Pi(), Pi());
-	h_etaphi = new TH2D("h_etaphi", "#eta,#phi; #eta; #phi [rad]; counts", 200, -10.0, 10.0, 314, -Pi(), Pi());
+	h_phi = new TH1D("h_phi", "#phi; #phi; counts", 50, -Pi(), Pi());
+	h_etaphi = new TH2D("h_etaphi", "#eta,#phi; #eta; #phi [rad]; counts", 200, -10.0, 10.0, 50, -Pi(), Pi());
 
-	h_dphi_read = new TH1D("h_dphi_read", "read #Delta#phi; #Delta#phi; counts", 314, -Pi(), Pi());
-	h_dphi_rho = new TH1D("h_dphi_rho", "#rho #Delta#phi; #Delta#phi; counts", 314, -Pi(), Pi());
-	h_dphi = new TH1D("h_dphi", "#Delta#phi; #Delta#phi; counts", 314, -Pi(), Pi());
+	h_dphi_read = new TH1D("h_dphi_read", "read #Delta#phi; #Delta#phi; counts", 50, -Pi(), Pi());
+	h_dphi_rho = new TH1D("h_dphi_rho", "#rho #Delta#phi; #Delta#phi; counts", 50, -Pi(), Pi());
+	h_dphi = new TH1D("h_dphi", "#Delta#phi; #Delta#phi; counts", 50, -Pi(), Pi());
 
-	h_dphi_acc = new TH2D("h_dphi_acc", "#phi; #phi [rad]; accepted; counts", 314, -Pi(), Pi(), 2, 0.0, 2.0);
+	h_dphi_acc = new TH2D("h_dphi_acc", "#phi; #phi [rad]; accepted; counts", 50, -Pi(), Pi(), 2, 0.0, 2.0);
 
 
 

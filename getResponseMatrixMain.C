@@ -194,7 +194,7 @@ void getResponseMatrix(TString inputName, TString outFileName, long nevents) {
 	CreateHistogams();
 
 	TH1D *h_dPhiMeas = new TH1D("h_dPhiMeas", "#Delta#phi measured; #Delta#phi_{measured} [1]; counts [1]", 50, -TMath::Pi(), TMath::Pi());
-	TH1D *h_dPhiTrue = new TH1D("h_dPhiTrue", "#Delta#phi measured; #Delta#phi_{true} [1]; counts [1]", 50, -TMath::Pi(), TMath::Pi());
+	TH1D *h_dPhiTrue = new TH1D("h_dPhiTrue", "#Delta#phi true; #Delta#phi_{true} [1]; counts [1]", 50, -TMath::Pi(), TMath::Pi());
 
 	TH1D **h_cosNdPhiMeas;
 	TH1D **h_cosNdPhiTrue;
@@ -214,11 +214,11 @@ void getResponseMatrix(TString inputName, TString outFileName, long nevents) {
 
 	for (int i = 0; i < nOrder; ++i) {
 
-		h_cosNdPhiMeas[i] = new TH1D(Form("h_cos%idPhiMeas", i+1), Form("cos(%i#Delta#phi) measured; cos(%i#Delta#phi)_{meas} [1]; counts [1]", i+1, i+1), 100, -1.0, 1.0);
-		h_cosNdPhiTrue[i] = new TH1D(Form("h_cos%idPhiTrue", i+1), Form("cos(%i#Delta#phi) true; cos(%i#Delta#phi)_{true} [1]; counts [1]", i+1, i+1), 100, -1.0, 1.0);
+		h_cosNdPhiMeas[i] = new TH1D(Form("h_cos%idPhiMeas", i+1), Form("cos(%i#Delta#phi) measured; cos(%i#Delta#phi)_{meas} [1]; counts [1]", i+1, i+1), 50, -1.0, 1.0);
+		h_cosNdPhiTrue[i] = new TH1D(Form("h_cos%idPhiTrue", i+1), Form("cos(%i#Delta#phi) true; cos(%i#Delta#phi)_{true} [1]; counts [1]", i+1, i+1), 50, -1.0, 1.0);
 
 		response_cosNdPhi[i] = new RooUnfoldResponse(h_cosNdPhiMeas[i], h_cosNdPhiTrue[i]);
-		response_cosNdPhi[i]->SetName(Form("response__cos%idPhi", i+1));
+		response_cosNdPhi[i]->SetName(Form("response_cos%idPhi", i+1));
 
 	}
 
